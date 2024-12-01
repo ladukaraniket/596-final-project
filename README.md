@@ -2,6 +2,6 @@
 
 ## Group Members
 - Aniket Ladukar
-- Pranav Parnekar
+- Pranav Parnerkar
 - Shriya Upasani
 - Pothula Punith Krishna
