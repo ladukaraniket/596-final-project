@@ -1,14 +1,27 @@
-# Flux-Schnell Diffusion Model Tuning Across Hardware Configurations
+# Flux-Schnell Diffusion Transformer Model Fine Tuning Across Hardware Configurations
 
-## :computer: Introduction to Diffusion Models
+## Introduction to Diffusion Transformers
 
-Diffusion models are a powerful class of generative AI models that create new data by learning to reverse a gradual noise-adding process. They work by:
+Diffusion Transformers (DTs) are a novel type of models that combines ideas from diffusion models (often used in generative tasks like image generation) with transformers (widely used for sequence modeling and language tasks). They leverage the strengths of both approaches for various generative and modeling tasks.
 
-- Slowly adding noise to data samples (forward process)
-- Learning to remove noise step-by-step (reverse process)
-- Generating new data by starting from pure noise
+### How do they work?
+- **Diffusion Process:** The model gradually adds noise to the data (e.g., image or text) in multiple timesteps and learns to reverse this noising process to generate clean data from random noise.
+  
+- **Transformer Architecture:** A transformer-based model captures long-range dependencies in the data using self-attention, enhancing the generation process by modeling complex relationships.
 
-These models have demonstrated significant success in applications such as image generation, text-to-image synthesis, and more.
+- **Iterative Denoising:** The model performs a series of denoising steps, progressively refining the data from noisy to clean through a learned reverse diffusion process.
+
+- **Conditional Generation:** Diffusion Transformers can generate data conditioned on other inputs (e.g., text-to-image generation), allowing for flexible and context-aware outputs.
+
+<br>
+
+These models have demonstrated significant success in applications such as image generation, text-to-image synthesis, video generation, anomaly detection, and more.
+
+<p align="center">
+  <img src="https://images.prismic.io/encord/ZfgaqMmUzjad_UTL_image1.png?auto=format,compress" alt="Image description"/>
+  <br>
+  <i>Diffusion Transformer Architecture</i>
+</p>
 
 ![image](https://github.com/user-attachments/assets/5b5469db-bac4-4eb5-bddf-7ae1e9813fb7)
 
@@ -16,9 +29,9 @@ These models have demonstrated significant success in applications such as image
 
 ## :star: Project Importance
 
-Tuning a flux-schnell diffusion model across various hardware configurations is crucial because:
+Tuning a flux-schnell diffusion transformer model across various hardware configurations is crucial because:
 
-- It helps understand how model performance scales with computational resources.
+- It helps understand how the model performance scales with computational resources.
 - It enables optimizing training for different hardware setups, leading to more efficient use of resources.
 - It provides insights into the trade-offs between training time, model quality, and hardware costs, helping to identify the best configuration for different scenarios.
 
@@ -28,7 +41,7 @@ This experimentation allows us to make informed decisions about deploying and sc
 
 ## :technologist: Experimental Approach
 
-In this project, we will tune our flux-schnell diffusion model on three hardware configurations to assess performance:
+In this project, we will tune our flux-schnell model on three hardware configurations to assess performance:
 
 1. **CPU on a laptop**: A baseline, commonly accessible configuration.
 2. **Single GPU on a remote cluster**: A more powerful setup for comparison.
@@ -74,7 +87,7 @@ Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating
 
 ## :pencil2: Conclusion
 
-In this project, we'll analyze the performance of the flux-schnell diffusion model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
+In this project, we'll analyze the performance of the flux-schnell diffusion transformer model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
 
 <br><br>
 
@@ -84,3 +97,7 @@ In this project, we'll analyze the performance of the flux-schnell diffusion mod
 - Pranav Parnerkar
 - Shriya Upasani
 - Punith Krishna Pothula
+
+<br>
+
+#### Fall 2024 - CSCI 596 - Scientific Computing and Visualization - University of Southern California - Thomas Lord Department of Computer Science - Viterbi School of Engineering
