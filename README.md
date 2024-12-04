@@ -1,4 +1,4 @@
-# Flux-Schnell Diffusion Transformer Model Tuning Across Hardware Configurations
+# Flux-Schnell Diffusion Transformer Model Fine Tuning Across Hardware Configurations
 
 ## Introduction to Diffusion Transformers
 
