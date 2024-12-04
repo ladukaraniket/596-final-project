@@ -23,8 +23,6 @@ These models have demonstrated significant success in applications such as image
   <i>Diffusion Transformer Architecture</i>
 </p>
 
-![image](https://github.com/user-attachments/assets/5b5469db-bac4-4eb5-bddf-7ae1e9813fb7)
-
 <br>
 
 ## :star: Project Importance
