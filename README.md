@@ -26,7 +26,7 @@ This experimentation allows us to make informed decisions about deploying and sc
 
 ## Experimental Approach
 
-In this project, we will tune our flux-schnell diffusion model on four hardware configurations to assess performance:
+In this project, we will tune our flux-schnell diffusion model on three hardware configurations to assess performance:
 
 1. **CPU on a laptop**: A baseline, commonly accessible configuration.
 2. **Single GPU on a remote cluster**: A more powerful setup for comparison.
@@ -47,9 +47,11 @@ We evaluate performance based on two key sets of metrics: **Quality** and **Effi
 ### Quality Metrics (Keeping tuning time constant)
 
 #### 1. Peak Signal-to-Noise Ratio (PSNR)
+
 PSNR is a measure of the quality of generated images by comparing the noise in the image to the signal. Higher PSNR values indicate better quality images. PSNR helps quantify the clarity and accuracy of the generated data.
 
 #### 2. Structural Similarity Index (SSIM)
+
 SSIM measures the perceptual similarity between two images, considering structural information, luminance, and texture contrast. Unlike PSNR, SSIM evaluates how similar the visual structure is, making it a more reliable indicator of image quality. Higher SSIM values signify images that are more similar to the real data.
 
 These metrics help quantify the visual fidelity of generated images compared to real images.
@@ -59,9 +61,11 @@ These metrics help quantify the visual fidelity of generated images compared to 
 ### Efficiency Metrics (Keeping the number of tuning iterations constant)
 
 #### 1. Training Speed
+
 Measured in iterations per second, this metric assesses the model's efficiency during the training phase. Higher training speed indicates that the model can learn faster, potentially leading to shorter training times and more efficient resource usage.
 
 #### 2. Inference Speed
+
 Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating point precision), this metric is crucial for understanding the model's efficiency during deployment. Higher inference speeds enable quicker output generation, making the model more suitable for real-time applications.
 
 <br>
@@ -70,12 +74,11 @@ Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating
 
 In this project, we'll analyze the performance of the flux-schnell diffusion model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
 
-
 <br><br>
 
-
 # Group Members
+
 - Aniket Ladukar
 - Pranav Parnerkar
 - Shriya Upasani
-- Pothula Punith Krishna
+- Punith Krishna Pothula
