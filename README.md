@@ -1,6 +1,6 @@
 # Flux-Schnell Diffusion Model Tuning Across Hardware Configurations
 
-## Introduction to Diffusion Models
+## :computer: Introduction to Diffusion Models
 
 Diffusion models are a powerful class of generative AI models that create new data by learning to reverse a gradual noise-adding process. They work by:
 
@@ -10,9 +10,11 @@ Diffusion models are a powerful class of generative AI models that create new da
 
 These models have demonstrated significant success in applications such as image generation, text-to-image synthesis, and more.
 
+![image](https://github.com/user-attachments/assets/5b5469db-bac4-4eb5-bddf-7ae1e9813fb7)
+
 <br>
 
-## Project Importance
+## :star: Project Importance
 
 Tuning a flux-schnell diffusion model across various hardware configurations is crucial because:
 
@@ -24,7 +26,7 @@ This experimentation allows us to make informed decisions about deploying and sc
 
 <br>
 
-## Experimental Approach
+## :technologist: Experimental Approach
 
 In this project, we will tune our flux-schnell diffusion model on three hardware configurations to assess performance:
 
@@ -40,7 +42,7 @@ For each configuration, we'll:
 
 <br>
 
-## Performance Evaluation
+## :memo: Performance Evaluation
 
 We evaluate performance based on two key sets of metrics: **Quality** and **Efficiency**.
 
@@ -70,7 +72,7 @@ Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating
 
 <br>
 
-### Conclusion
+## :pencil2: Conclusion
 
 In this project, we'll analyze the performance of the flux-schnell diffusion model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
 
