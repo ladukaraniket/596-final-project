@@ -23,9 +23,11 @@ These models have demonstrated significant success in applications such as image
   <i>Diffusion Transformer Architecture</i>
 </p>
 
+![image](https://github.com/user-attachments/assets/5b5469db-bac4-4eb5-bddf-7ae1e9813fb7)
+
 <br>
 
-## Project Importance
+## :star: Project Importance
 
 Tuning a flux-schnell diffusion transformer model across various hardware configurations is crucial because:
 
@@ -37,7 +39,7 @@ This experimentation allows us to make informed decisions about deploying and sc
 
 <br>
 
-## Experimental Approach
+## :technologist: Experimental Approach
 
 In this project, we will tune our flux-schnell model on three hardware configurations to assess performance:
 
@@ -53,7 +55,7 @@ For each configuration, we'll:
 
 <br>
 
-## Performance Evaluation
+## :memo: Performance Evaluation
 
 We evaluate performance based on two key sets of metrics: **Quality** and **Efficiency**.
 
@@ -83,7 +85,7 @@ Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating
 
 <br>
 
-### Conclusion
+## :pencil2: Conclusion
 
 In this project, we'll analyze the performance of the flux-schnell diffusion transformer model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
 
