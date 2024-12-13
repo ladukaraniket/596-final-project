@@ -55,6 +55,25 @@ For each configuration, we'll:
 
 ## :memo: Performance Evaluation
 
+## Dataset
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_1.jpg">  [trigger] in a white hoodie and grey pants, in a park |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_2.jpg"> [trigger] in a black hoodie and blue shorts, on a pier at night|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_3.jpg"> [trigger] in a grey t-shirt and black shorts, in the ocean, wearing sunglasses|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_4.jpg"> [trigger] in a pink hoodie and black shorts, standing in front of a waterfall |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_5.jpg"> [trigger] in a white t-shirt, selfie, in a garden, wearing glasses ||
+||
+
+
+### Inference Output
+
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/basic-inference-output.png"> <b>Prompt:</b>  a woman holding a coffee cup, in a beanie, sitting at a cafe |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_2000s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (1) |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (2)|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_2000s_logs.png"> <b>Prompt:</b>  Pranav is an astronaut, in space (3) |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (4) |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_a100_64_500s.png">  <b>Prompt:</b> Pranav is an astronaut, in Ocean (1)|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_a100_64_2000s.png"> <b>Prompt:</b> Pranav is an astronaut, in Ocean (2) |
+
+
+
 We evaluate performance based on two key sets of metrics: **Quality** and **Efficiency**.
 
 ### Quality Metrics (Keeping tuning time constant)
