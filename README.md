@@ -107,6 +107,24 @@ Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating
 **NVIDIA A100:** The A100 demonstrates consistent scaling, with the time per step remaining proportional across both step configurations. This indicates that the A100 handles the workload efficiently, maintaining a predictable scaling ratio. The A100 provides better throughput and efficiency, making it a preferred choice for larger-scale training tasks.
 **NVIDIA A40:**  For 2000 steps, the runtime on the A40 is significantly longer than on the A100, suggesting that the A100 is more optimized for high-performance computations. If the 500-step runtime for the A40 is added, we could further analyze its scalability.
 
+### Training Speed Calculations
+
+| GPU | Steps | Runtime(s) | Training Speed (steps/s) |
+| ------------- | ------------- | ------------- | ------------- |
+| NVIDIA A100  | 500  | 1013 | 0.4936 |
+| NVIDIA A100  | 2000  | 5236 | 0.3820 |
+| NVIDIA A40  | 500  | 1744 | 0.2866 |
+| NVIDIA A40  | 2000  | 9017 | 0.2218 |
+
+- For the same task and configuration, the NVIDIA A100 is more efficient in terms of training speed, making it preferable when faster training is a priority. <br>
+- Training becomes less efficient as the number of steps increases. This may indicate bottlenecks in resource utilization (e.g., memory bandwidth, communication overhead). <br>
+- The A100's scalability and efficiency at larger workloads make it more suitable for tasks requiring longer training durations or larger datasets.<br>
+- **If cost is a factor:** <br>
+NVIDIA A40 may be more cost-effective for shorter training runs where absolute speed is less critical, as its performance is lower but still sufficient. <br>
+For large-scale tasks where time-to-completion is crucial, the higher training speed of the A100 may justify its potentially higher cost.<br>
+
+<br>
+
 ## :pencil2: Conclusion
 
 In this project, we'll analyze the performance of the flux-schnell diffusion transformer model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
