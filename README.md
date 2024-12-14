@@ -70,6 +70,32 @@ Here, `[trigger]` is the action word we use to associate the subject in the imag
 
 ### Model outputs at various checkpoints
 
+### Prompt : A man holding a sign that says, \'this is a sign\'
+
+- ### A40 500 Steps
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_500s/1734075200411__000000000_8.jpg"> <br/> Iteration : 0|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_500s/1734076258247__000000250_8.jpg"> <br/> Iteration : 250|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_500s/1734077310890__000000500_8.jpg"> <br/> Iteration : 500|
+
+- ### A100 500 Steps
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_500s/1733985094864__000000000_8.jpg"> <br/> Iteration : 0|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_500s/1733986615103__000000250_8.jpg"> <br/> Iteration : 250|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_500s/1734117638000__000000500_8.jpg"> <br/> Iteration : 500|
+
+- ### A40 2000 Steps
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734113573786__000000000_8.jpg"> <br/> Iteration : 0|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734114631580__000000250_8.jpg"> <br/> Iteration : 250|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734115687518__000000500_8.jpg"> <br/> Iteration : 500|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734116738064__000000750_8.jpg"> <br/> Iteration : 750|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734117794606__000001000_8.jpg"> <br/> Iteration : 1000|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734118851653__000001250_8.jpg"> <br/> Iteration : 1250|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734119907138__000001500_8.jpg"> <br/> Iteration : 1500|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734120965227__000001750_8.jpg"> <br/> Iteration : 1750|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a40_64_2000s_logs/1734122019566__000002000_8.jpg"> <br/> Iteration : 2000|
+
+- ### A100 2000 Steps
+| | | |
+|:-------------------------:|:-------------------------:|:-------------------------:|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734038598437__000000000_8.jpg"> <br/> Iteration : 0|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734039236551__000000250_8.jpg"> <br/> Iteration : 250|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734039873266__000000500_8.jpg"> <br/> Iteration : 500|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734040516048__000000750_8.jpg"> <br/> Iteration : 750|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734041152315__000001000_8.jpg"> <br/> Iteration : 1000|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734041792015__000001250_8.jpg"> <br/> Iteration : 1250|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734042429493__000001500_8.jpg"> <br/> Iteration : 1500|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734114894846__000001750_8.jpg"> <br/> Iteration : 1750|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/training_samples/samples_a100_64_2000s/1734115468557__000002000_8.jpg"> <br/> Iteration : 2000|
+
 <br>
 
 ### Inference Output
