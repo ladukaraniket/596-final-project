@@ -66,6 +66,12 @@ The custom dataset we used contained five images of one of the team members with
 
 Here, `[trigger]` is the action word we use to associate the subject in the images.
 
+<br>
+
+### Model outputs at various checkpoints
+
+<br>
+
 ### Inference Output
 
 | | | | |
