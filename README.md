@@ -39,15 +39,15 @@ This experimentation allows us to make informed decisions about deploying and sc
 
 ## :technologist: Experimental Approach
 
-In this project, we will tune our flux-schnell model on three hardware configurations to assess performance:
+In this project, we will tune our flux-schnell model on two hardware configurations to assess performance:
 
-1. **CPU on a laptop**: A baseline, commonly accessible configuration.
-2. **Single GPU on a remote cluster**: A more powerful setup for comparison.
-3. **Multiple GPUs on a single node**: A high-performance configuration aimed at faster processing and larger scale.
+1. **Nvidia A40 GPU on CARC**: 8 CPU Cores, 64GB RAM, 40GB VRAM
+2. **Nvidia A100 GPU on CARC**: 8 CPU Cores, 64GB RAM, 80GB VRAM
 
 For each configuration, we'll:
 
-- Train the model, closely monitoring performance metrics.
+- Fine tune the model, closely monitoring loss and time taken.
+  - Fine tuning iterations: 500 and 2000.
 - Evaluate the generated outputs and assess training efficiency.
 - Compare results across configurations to understand the strengths and weaknesses of each setup.
 
@@ -57,12 +57,14 @@ For each configuration, we'll:
 
 ## Dataset
 
-| | | |
-|:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_1.jpg">  [trigger] in a white hoodie and grey pants, in a park |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_2.jpg"> [trigger] in a black hoodie and blue shorts, on a pier at night|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_3.jpg"> [trigger] in a grey t-shirt and black shorts, in the ocean, wearing sunglasses|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_4.jpg"> [trigger] in a pink hoodie and black shorts, standing in front of a waterfall |  <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/dataset/image_5.jpg"> [trigger] in a white t-shirt, selfie, in a garden, wearing glasses ||
-||
+The custom dataset we used contained five images of one of the team members with accompanying text files with the following captions describing the subject and the image:
+- [trigger] in a white hoodie and grey pants, in a park
+- [trigger] in a black hoodie and blue shorts, on a pier at night
+- [trigger] in a grey t-shirt and black shorts, in the ocean, wearing sunglasses
+- [trigger] in a pink hoodie and black shorts, standing in front of a waterfall
+- [trigger] in a white t-shirt, selfie, in a garden, wearing glasses
 
+Here, `[trigger]` is the action word we use to associate the subject in the images.
 
 ### Inference Output
 
@@ -70,66 +72,50 @@ For each configuration, we'll:
 |:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (1) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A40 <br/> CPU: 64GB RAM <br/> Training Iterations : 500|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (2) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A100 <br/> CPU: 64GB RAM <br/> Training Iterations : 500 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_2000s_logs.png"> <b>Prompt:</b>  Pranav is an astronaut, in space (3) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A40 <br/> CPU: 64GB RAM <br/> Training Iterations : 2000| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_2000s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (4) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A100 <br/> CPU: 64GB RAM <br/> Training Iterations : 2000|
 
+<br>
 
-## Loss Vs Training Iterations
+### Metrics (Keeping the number of tuning iterations constant)
 
-#### 1. 500 Steps
+#### 1. Speedup
 
-<img width="1604" alt="500 steps" src="./flux-schnell-tuning/evaluations/500s loss plot.png">
-
-#### 2. 2000 Steps
-
-<img width="1604" alt="2000 steps" src="./flux-schnell-tuning/evaluations/2000s loss plot.png">
-
-
-## Time Vs GPU configurations
-
-<!-- #### 1. 500 Steps
-
-<img width="1604" alt="500 steps" src="./flux-schnell-tuning/evaluations/500s time plot.png">
-
-#### 2. 2000 Steps
-
-<img width="1604" alt="2000 steps" src="./flux-schnell-tuning/evaluations/2000s time plot.png"> -->
+Ratio of fine tuning time taken by the slower GPU to the faster GPU
 
 | | |
 |:-------------------------:|:-------------------------:|
 |<img width="1604" alt="500 steps" src="./flux-schnell-tuning/evaluations/500s time plot.png"> 500 Steps|<img width="1604" alt="2000 steps" src="./flux-schnell-tuning/evaluations/2000s time plot.png"> 2000 Steps|
 
-
-
-We evaluate performance based on two key sets of metrics: **Quality** and **Efficiency**.
-
-### Quality Metrics (Keeping tuning time constant)
-
-#### 1. Peak Signal-to-Noise Ratio (PSNR)
-
-PSNR is a measure of the quality of generated images by comparing the noise in the image to the signal. Higher PSNR values indicate better quality images. PSNR helps quantify the clarity and accuracy of the generated data.
-
-#### 2. Structural Similarity Index (SSIM)
-
-SSIM measures the perceptual similarity between two images, considering structural information, luminance, and texture contrast. Unlike PSNR, SSIM evaluates how similar the visual structure is, making it a more reliable indicator of image quality. Higher SSIM values signify images that are more similar to the real data.
-
-These metrics help quantify the visual fidelity of generated images compared to real images.
+<em>Observation</em>: Average Speedup of 1.8x was observed when we used the A100
+<br>
+<em>Analysis</em>: A100 offers a higher tensor core count (336 for A40 and 432 for A100), a significantly faster memmory bus (384 bit for A40 and 5120 bit for A100) and VRAM bandwidth (696GB GB/s for A40 and 1555 GB/s for A100). These factors attribute to its speedup and performance for fine tuning a large diffusion transformer.
 
 <br>
 
-### Efficiency Metrics (Keeping the number of tuning iterations constant)
-
-#### 1. Training Speed
-
-Measured in iterations per second, this metric assesses the model's efficiency during the training phase. Higher training speed indicates that the model can learn faster, potentially leading to shorter training times and more efficient resource usage.
-
 #### 2. Inference Speed
 
-Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating point precision), this metric is crucial for understanding the model's efficiency during deployment. Higher inference speeds enable quicker output generation, making the model more suitable for real-time applications.
+Time taken by a tuned model to yield an image given a prompt. We observed inference time double across the two hardware configurations (34s for A40 and 17s for A100)
+
+<br>
+
+#### 3. Loss Vs Training Iterations
+
+- ##### 500 Steps
+
+<img width="1604" alt="500 steps" src="./flux-schnell-tuning/evaluations/500s loss plot.png">
+
+- ##### 2000 Steps
+
+<img width="1604" alt="2000 steps" src="./flux-schnell-tuning/evaluations/2000s loss plot.png">
+
+<em>Observation</em>: Similar losses are observed in both cases 
+<br>
+<em>Analysis</em>: Sample images generated during training and inference visually look very similar as shown in our image grid so we were expecting similar loss plots for both hardware configurations
 
 <br>
 
 ### Performance Across Different GPUs
 
 **NVIDIA A100:** The A100 demonstrates consistent scaling, with the time per step remaining proportional across both step configurations. This indicates that the A100 handles the workload efficiently, maintaining a predictable scaling ratio. The A100 provides better throughput and efficiency, making it a preferred choice for larger-scale training tasks.
-**NVIDIA A40:**  For 2000 steps, the runtime on the A40 is significantly longer than on the A100, suggesting that the A100 is more optimized for high-performance computations. If the 500-step runtime for the A40 is added, we could further analyze its scalability.
+**NVIDIA A40:**  For 2000 steps, the runtime on the A40 is significantly longer than on the A100, suggesting that the A100 is more optimized for high-performance computations. 
 
 ### Training Speed Calculations
 
@@ -151,7 +137,7 @@ For large-scale tasks where time-to-completion is crucial, the higher training s
 
 ## :pencil2: Conclusion
 
-In this project, we'll analyze the performance of the flux-schnell diffusion transformer model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
+In this project, we analyzed the performance of the flux-schnell diffusion transformer model across different hardware configurations using relevant metrics. By optimizing training time and ensuring efficient resource usage, we studied model performance and computational cost, ultimately gaining valuable insights for deploying diffusion models and broadly generative models at scale.
 
 <br><br>
 
