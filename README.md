@@ -102,7 +102,7 @@ Here, `[trigger]` is the action word we use to associate the subject in the imag
 
 | | | | |
 |:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:|
-|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (1) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A40 <br/> CPU: 64GB RAM <br/> Training Iterations : 500|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (2) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A100 <br/> CPU: 64GB RAM <br/> Training Iterations : 500 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_2000s_logs.png"> <b>Prompt:</b>  Pranav is an astronaut, in space (3) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A40 <br/> CPU: 64GB RAM <br/> Training Iterations : 2000| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_2000s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (4) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A100 <br/> CPU: 64GB RAM <br/> Training Iterations : 2000|
+|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (1) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A40 <br/> CPU: 64GB RAM <br/> Iterations : 500|<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_500s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (2) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A100 <br/> CPU: 64GB RAM <br/> Iterations : 500 |<img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a40_64_2000s_logs.png"> <b>Prompt:</b>  Pranav is an astronaut, in space (3) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A40 <br/> CPU: 64GB RAM <br/> Iterations : 2000| <img width="1604" alt="screen shot 2017-08-07 at 12 18 15 pm" src="./flux-schnell-tuning/inference_output/output_infer_space_a100_64_2000s.png"> <b>Prompt:</b> Pranav is an astronaut, in space (4) <br/><br/> <b> Hardware Configuration:</b> <br/> GPU: A100 <br/> CPU: 64GB RAM <br/> Iterations : 2000|
 
 <br>
 
@@ -128,7 +128,7 @@ Time taken by a tuned model to yield an image given a prompt. We observed infere
 
 <br>
 
-#### 3. Loss Vs Training Iterations
+#### 3. Loss Vs Iterations
 
 - ##### 500 Steps
 
