@@ -102,6 +102,11 @@ Evaluated in steps per second using a batch size of 256 in FP32 (32-bit floating
 
 <br>
 
+### Performance Across Different GPUs
+
+**NVIDIA A100:** The A100 demonstrates consistent scaling, with the time per step remaining proportional across both step configurations. This indicates that the A100 handles the workload efficiently, maintaining a predictable scaling ratio. The A100 provides better throughput and efficiency, making it a preferred choice for larger-scale training tasks.
+**NVIDIA A40:**  For 2000 steps, the runtime on the A40 is significantly longer than on the A100, suggesting that the A100 is more optimized for high-performance computations. If the 500-step runtime for the A40 is added, we could further analyze its scalability.
+
 ## :pencil2: Conclusion
 
 In this project, we'll analyze the performance of the flux-schnell diffusion transformer model across different hardware configurations using both quality and efficiency metrics. By optimizing training time and ensuring efficient resource usage, we aim to balance model performance and computational cost, ultimately providing valuable insights for deploying diffusion models at scale.
