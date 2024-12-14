@@ -1,6 +1,6 @@
 # Flux-Schnell Diffusion Transformer Model Fine Tuning Across Hardware Configurations
 
-## Introduction to Diffusion Transformers
+## 🚀 Introduction to Diffusion Transformers
 
 Diffusion Transformers (DTs) are a novel type of models that combines ideas from diffusion models (often used in generative tasks like image generation) with transformers (widely used for sequence modeling and language tasks). They leverage the strengths of both approaches for various generative and modeling tasks.
 
