@@ -12,5 +12,5 @@ RAM - 64 GB
 - #### 2000 steps   - `87 mins 16 s`
 
 ## NVIDIA A40
-- #### 500 steps - ` m s`
+- #### 500 steps - `31 m 49s`
 - #### 2000 steps - `150 m 17s`
